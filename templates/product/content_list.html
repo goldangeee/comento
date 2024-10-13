@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <!-- Page Content-->
 <div class="container px-4 px-lg-5">
@@ -9,12 +10,12 @@
             {% if content_list %}
                 {% for content in content_list %}                        
                     <hr/>
-                    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+                    <img src="/media/sample.jpg" alt="Sample Image" />
                     <h5>{{ content.title}}</h5>
                     <p>{{ content.content | truncatewords:10 }}</p>
                     <a class="btn btn-primary" href="{% url 'detail' content.id %}">상품 상세보기</a>
                     
-                    {% endfor %}                        
+                {% endfor %}                        
             {% else %}
                 <p>content가 없습니다.</p>
             {% endif %} 
